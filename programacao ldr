@@ -1,0 +1,35 @@
+const int led = 3;    //definir nome e porta de conexão para o led
+
+const int ldr = A0;    // define o nome e porta de conexão para o pino A0
+
+void setup() 
+{
+
+Serial.begin(9600);    // define a taxa de frequencia para ser lida no monitor serial do programa Arduino IDE
+
+pinMode(led, OUTPUT);    // define que o pino do led enviará sinal
+
+pinMode(ldr, INPUT);    // define que o pino do ldr receberá sinal
+
+}
+void loop() {
+
+int ldrEstado = analogRead(ldr);   // define que valor recebido do ldr será sinal analogico
+
+if (ldrEstado <=500) // define valor menor ou igual
+{
+
+digitalWrite(led, HIGH);   // se condição for menor ou igual led acende
+
+Serial.println("Ambiente Escuro, LED está acesso");  // Escreve no monitor serial
+
+}
+
+else {
+
+digitalWrite(led, LOW);    // senão led fica apagado
+
+Serial.println("Ambiente está claro"); // escreve no monitor serial 
+
+}
+}
