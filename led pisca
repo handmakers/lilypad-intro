@@ -1,0 +1,13 @@
+void setup() {
+  // defina o pino. que a perna positiva do led será costurada
+  // a perna negativa do led será costurada no pino negativo do lilypad
+  pinMode(10, OUTPUT);
+}
+
+// rotina que se repetirá
+void loop() {
+  digitalWrite(10, HIGH);   // ligar o led 
+  delay(1000);                       // tempo de 1000ms de espera- quanto maior o valor mais tempo permanecera ligado
+  digitalWrite(10, LOW);    // desliga o led
+  delay(1000);                       // tempo de 1000ms de espera - quanto maior o valor mais tempo permanecera desligado
+}
